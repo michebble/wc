@@ -18,18 +18,25 @@ $ go build
 
 ### Usage
 
-The program accepts test via standard in, outputting the number of words via standard out.
+The program accepts test via standard input
 
-For example
-
-```
-$ cat main.go | ./wc
-151
-```
-
-The program will also accept the flag `-l` which will result in the lines being counted instead of words
+By default it will count the number of words.
 
 ```
-$ cat main.go | ./wc -l
-42
+$ echo "This is sample text\nFollowed by more text on a new line" | ./wc
+4
+```
+
+Pass the flag `-l` to count the number of lines instead of words.
+
+```
+$ echo "This is sample text\nFollowed by more text on a new line" | ./wc -l
+2
+```
+
+Pass the flag `-b` to count the number of bytes instead.
+
+```
+$ echo "This is sample text\nFollowed by more text on a new line" | ./wc -b
+56
 ```
